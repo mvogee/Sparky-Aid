@@ -1,6 +1,10 @@
 import React from "react";
 import Nav from '../../components/nav/Nav';
+import ContentSlider from "../../components/content-slider/ContentSlider";
 const Home = () => {
+    let item1 = {imgUrl: "http://matthewvogee.com/img/a-thumbnail.png", heading: "Image One", body: "body copy", cta: "call to action 1", ctaLink: "http://matthewvogee.com"};
+    let item2 = {imgUrl: "http://matthewvogee.com/img/a-thumbnail.png", heading: "Image Two", body: "body copy", cta: null, ctaLink: null};
+    let item3 = {imgUrl: "http://matthewvogee.com/img/a-thumbnail.png", heading: "Image Three", body: "body copy", cta: "do something", ctaLink: null};
     return(
         <div className="home">
             <Nav />
@@ -14,6 +18,7 @@ const Home = () => {
                     covered. So get back to doing work and let us do the 
                     calculating! Be safe out there.</p>
             </div>
+            <ContentSlider content={[item1,item2,item3]} count={3}/>
         </div>
     );
 }
