@@ -1,0 +1,10 @@
+.controlBubble {
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    background-color: var(--secondary-accent);
+}
+
+img {
+    width: 100%;
+}
