@@ -1,3 +1,6 @@
+import { EventHandler } from "react";
+import "./ContentSlider.css";
+
 
 type AppProps = {
     content: {
@@ -31,9 +34,15 @@ const images = (content: {
             </div>
     );
 };
+
+const bubbleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    console.log(event.currentTarget.getAttribute("data-idx"));
+    // whenever the bubble is clicked make the slider scroll to the given position for the associated image.
+}
+
 const controlBubbles = (val: undefined, idx: number) => {
     return (
-        <div key={idx} id={"bubble-" + idx.toString()} className="controlBubble"></div>
+        <div key={idx} id={"bubble-" + idx.toString()} className="controlBubble" onClick={bubbleClick} data-idx={idx.toString()}></div>
     );
 };
 
