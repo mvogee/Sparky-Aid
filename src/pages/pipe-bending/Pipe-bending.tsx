@@ -1,5 +1,5 @@
 import React from "react";
-import {useState} from "react";
+import {useState, useRef} from "react";
 import Nav from "../../components/nav/Nav";
 
 /* TODO:
@@ -12,15 +12,38 @@ import Nav from "../../components/nav/Nav";
 */
 
 
-
+const getNumMeasurements = (bendType: string) => {
+    let numMeasurements = 1;
+    switch (bendType) {
+        case "1":
+        case "2":
+            numMeasurements = 1;
+            break;
+        case "3":
+        case "4":
+        case "7":
+            numMeasurements = 2;
+            break;
+        case "5":
+        case "6":
+            numMeasurements = 3;
+            break;
+        case "8":
+            numMeasurements = 0;
+            break;
+    }
+    return (numMeasurements);
+};
 const PipeBending = () => {
 
-    const [bendType, setBendType] = useState<number>(1);
+    const [bendType, setBendType] = useState<string>("1");
     const [pipeSize, setPipeSize] = useState<string>("1/2");
     const [pipeType, setPipeType] = useState<string>("EMT");
+    const numMeasurements = useRef<number>(1);
 
     const changeBendType = (event : any) => {
         setBendType(event.target.value);
+        numMeasurements.current = getNumMeasurements(event.target.value);
     };
     const changePipeSize = (event : any) => {
         setPipeSize(event.target.value);
@@ -49,15 +72,18 @@ const PipeBending = () => {
 
             <label htmlFor="bend-type">Bend Type</label>
             <select id="bend-Type" onChange={changeBendType} value={bendType}>
-                <option value={1} >90deg</option>
-                <option value={2} >Back to Back 90</option>
-                <option value={3} >Offset</option>
-                <option value={4} >kick 90</option>
-                <option value={5} >Rolled offset</option>
-                <option value={6} >4pt Saddle</option>
-                <option value={7} >3pt Saddle</option>
-                <option value={8} >Box offset</option>
+                <option value="1" >90deg</option>
+                <option value="2" >Back to Back 90</option>
+                <option value="3" >Offset</option>
+                <option value="4" >kick 90</option>
+                <option value="5" >Rolled offset</option>
+                <option value="6" >4pt Saddle</option>
+                <option value="7" >3pt Saddle</option>
+                <option value="8" >Box offset</option>
             </select>
+            <div className="measurements-input-container">
+
+            </div>
         </div>
     );
 };
