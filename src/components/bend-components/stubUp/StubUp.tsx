@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import MeasurementInput from "../measurementInput/MeasurementInput"
 
 type AppProps = {
     conduitSize: string;
@@ -37,18 +38,17 @@ const [stubMeasure1, setStubMeasure1] = useState<number>(0);
         setDistanceToBend(stubMeasure1 - getTakeup(props.conduitSize, props.conduitType));
     };
 
-    const changeMeasure1 = (event : any) => {
-        console.log(typeof(event));
-        setStubMeasure1(event.target.value);
-    };
-
     return (
         <div className="StageTwo-container">
             <h2>StubUp</h2>
             <div className="measurements">
                 <form onSubmit={calculateBend}>
-                    <label htmlFor="stubMeasure1">Distance to back of 90</label>
-                    <input id="stubMeasure1" type="number" step="0.125" value={stubMeasure1} onChange={changeMeasure1}></input>
+                    < MeasurementInput
+                        id="stubMeasure1"
+                        label="Distance to back of 90"
+                        value={stubMeasure1}
+                        updateValueFunction={setStubMeasure1}
+                    />
                     <button type="submit">Calculate</button>
                 </form>
 
