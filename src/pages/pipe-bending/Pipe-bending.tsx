@@ -13,29 +13,6 @@ import BackToBackStubUp from "../../components/bend-components/backToBackStubUp/
 ** - calculate button
 */
 
-
-// const getNumMeasurements = (bendType: string) => {
-//     let numMeasurements = 1;
-//     switch (bendType) {
-//         case "1":
-//         case "2":
-//             numMeasurements = 1;
-//             break;
-//         case "3":
-//         case "4":
-//         case "7":
-//             numMeasurements = 2;
-//             break;
-//         case "5":
-//         case "6":
-//             numMeasurements = 3;
-//             break;
-//         case "8":
-//             numMeasurements = 0;
-//             break;
-//     }
-//     return (numMeasurements);
-// };
 const PipeBending = () => {
 
     const [bendType, setBendType] = useState<string>("1");
