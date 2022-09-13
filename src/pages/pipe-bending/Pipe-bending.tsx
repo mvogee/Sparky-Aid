@@ -3,6 +3,7 @@ import {useState} from "react";
 import Nav from "../../components/nav/Nav";
 import StubUp from "../../components/bend-components/stubUp/StubUp";
 import BackToBackStubUp from "../../components/bend-components/backToBackStubUp/BackToBackStubUp";
+import Offset from "../../components/bend-components/offset/Offset";
 
 /* TODO:
 ** - Display
@@ -33,10 +34,13 @@ const PipeBending = () => {
 
     const selectBendDisplay = (bendType: string) => {
         if (bendType === "stubUp") {
-            return ( <StubUp conduitSize={pipeSize} conduitType={pipeType}/>);
+            return (<StubUp conduitSize={pipeSize} conduitType={pipeType}/>);
         }
         if (bendType === "backToBack90") {
             return (<BackToBackStubUp conduitSize={pipeSize} conduitType={pipeType}/>)
+        }
+        if (bendType === "offset") {
+            return (< Offset conduitSize={pipeSize} conduitType={pipeType} />)
         }
         else {
             return ( <StubUp conduitSize={pipeSize} conduitType={pipeType}/>);

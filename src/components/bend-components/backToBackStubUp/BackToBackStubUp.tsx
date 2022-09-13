@@ -25,7 +25,7 @@ const calculateMinDistanceToFirstBend = () => {
 
 const calculateBend = (event: any) => {
     event.preventDefault();
-    //setMinFirstBendDistance(calculateMinDistanceToFirstBend);
+    setMinFirstBendDistance(calculateMinDistanceToFirstBend);
     setDistanceToBend2(btbMeasure1);
 };
 
@@ -45,9 +45,9 @@ const calculateBend = (event: any) => {
             </div>
             <div className="display">
                 <p>step 1</p>
-                <p className="measure1">standard stub up. leave at least { minFirstBendDistance }" of space before the bend.</p>
+                <p className="measure1">standard stub up. leave at least { minFirstBendDistance }" after the first mark.</p>
                 <p>step 2</p>
-                <p>bend with mark on the star facing away from previous bend.</p>
+                <p>bend with mark on the star. face bender away from previous bend.</p>
                 <p className="measure1">{distanceToBend2 > 0 ? distanceToBend2 : "Error"}"</p>
                 <div className="lineOne"></div>
                 <div className="lineTwo"></div>
