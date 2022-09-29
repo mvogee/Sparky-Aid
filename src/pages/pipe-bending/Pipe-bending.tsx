@@ -5,6 +5,7 @@ import StubUp from "../../components/bend-components/stubUp/StubUp";
 import BackToBackStubUp from "../../components/bend-components/backToBackStubUp/BackToBackStubUp";
 import Offset from "../../components/bend-components/offset/Offset";
 import BoxOffset from "../../components/bend-components/boxOffset/BoxOffset";
+import "./pipe-bending.css";
 
 /* TODO:
 ** - Display
@@ -55,37 +56,40 @@ const PipeBending = () => {
         <div className="pipe-bending">
             <Nav pageId={2}/>
             <h1>Pipe Bending</h1>
-            <ul>
-                <li>
-                    <label htmlFor="pipe-size">Pipe size</label>
-                    <select id="pipe-size" onChange={changePipeSize} value={pipeSize}>
-                        <option value="1/2">1/2"</option>
-                        <option value="3/4">3/4"</option>
-                        <option value="1">1"</option>
-                        <option value="1 1/4">1 1/4"</option>
-                    </select>
-                </li>
-                <li>
-                    <label htmlFor="pipe-type" >pipe type</label>
-                    <select id="pipe-type" onChange={changePipeType} value={pipeType}>
-                        <option value="EMT">EMT</option>
-                        <option value="RMC">RMC</option>
-                    </select>
-                </li>
-                <li>
-                    <label htmlFor="bend-type">Bend Type</label>
-                    <select id="bend-Type" onChange={changeBendType} value={bendType}>
-                        <option value="stubUp" >90deg</option>
-                        <option value="backToBack90" >Back to Back 90</option>
-                        <option value="offset" >Offset</option>
-                        <option value="kick90" >kick 90</option>
-                        <option value="rolledOffset" >Rolled offset</option>
-                        <option value="4ptSaddle" >4pt Saddle</option>
-                        <option value="3ptSaddle" >3pt Saddle</option>
-                        <option value="boxOffset" >Box offset</option>
-                    </select>
-                </li>
-            </ul>
+            <div className="selection-options">
+                <ul>
+                    <li>
+                        <label htmlFor="pipe-size">Pipe size</label>
+                        <select id="pipe-size" onChange={changePipeSize} value={pipeSize}>
+                            <option value="1/2">1/2"</option>
+                            <option value="3/4">3/4"</option>
+                            <option value="1">1"</option>
+                            <option value="1 1/4">1 1/4"</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label htmlFor="pipe-type" >pipe type</label>
+                        <select id="pipe-type" onChange={changePipeType} value={pipeType}>
+                            <option value="EMT">EMT</option>
+                            <option value="RMC">RMC</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label htmlFor="bend-type">Bend Type</label>
+                        <select id="bend-Type" onChange={changeBendType} value={bendType}>
+                            <option value="stubUp" >90deg</option>
+                            <option value="backToBack90" >Back to Back 90</option>
+                            <option value="offset" >Offset</option>
+                            <option value="kick90" >kick 90</option>
+                            <option value="rolledOffset" >Rolled offset</option>
+                            <option value="4ptSaddle" >4pt Saddle</option>
+                            <option value="3ptSaddle" >3pt Saddle</option>
+                            <option value="boxOffset" >Box offset</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            
             
             
             
