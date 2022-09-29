@@ -13,7 +13,6 @@ type AppProps = {
 const Offset = (props: AppProps) => {
 
     const [offsetHeight, setOffsetHeight] = useState<number>(0);
-    //const [degreeBends, setDegreeBends] = useState<string>("10deg");
     const [multiplier, setMultiplier] = useState<number>(6);
 
     const changeDegree = (event: any) => {
@@ -35,7 +34,7 @@ const Offset = (props: AppProps) => {
                 <option value="1.2">60deg</option>
             </select>
             <div className="display">
-                <p>first bend: at least {offsetHeight * multiplier}" from obstacle.</p>
+                <p>make first mark at least 2.5" off of end of pipe.</p>
                 <p>second bend: mark {offsetHeight * multiplier}" from first bend</p>
             </div>
         </div>

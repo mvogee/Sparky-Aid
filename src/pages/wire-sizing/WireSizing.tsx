@@ -4,7 +4,7 @@ import Nav from "../../components/nav/Nav";
 const WireSizing = () => {
     return (
         <div className="wire-sizing">
-            <Nav />
+            <Nav pageId={3}/>
             <h1>Wire Sizing</h1>
         </div>
     );
