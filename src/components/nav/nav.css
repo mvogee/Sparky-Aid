@@ -1,0 +1,29 @@
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: 0.1rem;
+    color: var(--main-bg-color);
+    background-color: var(--main-text-color);
+}
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+nav ul li {
+    font-size: 1.5rem;
+}
+a, a:visited {
+    color: var(--main-bg-color);
+}
+
+a:hover, a:active {
+    color: var(--secondary-accent);
+}
+
+.current-page {
+    color: var(--secondary-accent);
+}

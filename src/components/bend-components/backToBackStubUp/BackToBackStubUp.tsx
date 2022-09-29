@@ -57,5 +57,4 @@ const calculateBend = (event: any) => {
     );
 };
 
-
 export default BackToBackStubUp;

@@ -4,6 +4,7 @@ import Nav from "../../components/nav/Nav";
 import StubUp from "../../components/bend-components/stubUp/StubUp";
 import BackToBackStubUp from "../../components/bend-components/backToBackStubUp/BackToBackStubUp";
 import Offset from "../../components/bend-components/offset/Offset";
+import BoxOffset from "../../components/bend-components/boxOffset/BoxOffset";
 
 /* TODO:
 ** - Display
@@ -42,6 +43,9 @@ const PipeBending = () => {
         if (bendType === "offset") {
             return (< Offset conduitSize={pipeSize} conduitType={pipeType} />)
         }
+        if (bendType === "boxOffset") {
+            return ( <BoxOffset conduitSize={pipeSize} conduitType={pipeType}/>)
+        }
         else {
             return ( <StubUp conduitSize={pipeSize} conduitType={pipeType}/>);
         }
@@ -49,7 +53,7 @@ const PipeBending = () => {
 
     return (
         <div className="pipe-bending">
-            <Nav />
+            <Nav pageId={2}/>
             <h1>Pipe Bending</h1>
             <ul>
                 <li>
@@ -78,7 +82,7 @@ const PipeBending = () => {
                         <option value="rolledOffset" >Rolled offset</option>
                         <option value="4ptSaddle" >4pt Saddle</option>
                         <option value="3ptSaddle" >3pt Saddle</option>
-                        <option value="BoxOffset" >Box offset</option>
+                        <option value="boxOffset" >Box offset</option>
                     </select>
                 </li>
             </ul>

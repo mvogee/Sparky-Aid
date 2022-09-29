@@ -7,7 +7,7 @@ const Home = () => {
     let item3 = {imgUrl: "http://matthewvogee.com/img/a-thumbnail.png", heading: "Image Three", body: "body copy", cta: "do something", ctaLink: null};
     return(
         <div className="home">
-            <Nav />
+            <Nav pageId={1}/>
             <div className="Welcome">
                 <h1>Welcome to Sparky Aid</h1>
                 <h2>An Electricians best friend.</h2>
